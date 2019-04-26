@@ -1,4 +1,4 @@
-package com.steven.demo;
+package com.steven.demo.doman;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

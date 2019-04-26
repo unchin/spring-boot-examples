@@ -1,5 +1,6 @@
 package com.steven.demo;
 
+import com.steven.demo.doman.Quote;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
