@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class RemoveDuplicatesFromSortedArray {
 
-    public static int removeDuplicates(int[] nums) {
+     static int removeDuplicates(int[] nums) {
         if (nums.length == 0) {
             return 0;
         }
