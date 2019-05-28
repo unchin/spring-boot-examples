@@ -1,6 +1,8 @@
 package com.steven.demo.algorithm;
 
 public class RemoveElement {
+
+    // 未删除后缀写法
     public int removeElement0(int[] nums, int val) {
         if (nums.length == 0) {
             return 0;
@@ -17,6 +19,7 @@ public class RemoveElement {
         return i;
     }
 
+    //删除后缀，但是效率不高
     public int removeElement1(int[] nums, int val) {
         int i = 0;
         for (int j = 0; j < nums.length; j++) {
@@ -28,13 +31,13 @@ public class RemoveElement {
         return i;
     }
 
+    //高效率写法
     public int removeElement2(int[] nums, int val) {
         int i = 0;
         int n = nums.length;
         while (i < n) {
             if (nums[i] == val) {
                 nums[i] = nums[n - 1];
-                // reduce array size by one
                 n--;
             } else {
                 i++;
