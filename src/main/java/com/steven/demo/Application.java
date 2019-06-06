@@ -21,19 +21,19 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @Bean
-    public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        return builder.build();
-    }
-
-    @Bean
-    public CommandLineRunner run(RestTemplate restTemplate){
-        return args -> {
-            Quote quote = restTemplate.getForObject(
-                    "http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-            if (quote != null) {
-                log.info(quote.toString());
-            }
-        };
-    }
+//    @Bean
+//    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+//        return builder.build();
+//    }
+//
+//    @Bean
+//    public CommandLineRunner run(RestTemplate restTemplate){
+//        return args -> {
+//            Quote quote = restTemplate.getForObject(
+//                    "http://gturnquist-quoters.cfapps.io/api/random", Quote.class);
+//            if (quote != null) {
+//                log.info(quote.toString());
+//            }
+//        };
+//    }
 }
