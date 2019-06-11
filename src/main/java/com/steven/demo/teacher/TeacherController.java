@@ -21,11 +21,6 @@ public class TeacherController {
         return teacherMapper.selectList(null);
     }
 
-    @GetMapping(value = "/selectAllById")
-    public Teacher selectByTeacherName(int id) {
-        return teacherMapper.selectOne(new Teacher(id));
-    }
-
     @GetMapping(value = "/selectAllByMap")
     public List<Teacher> selectAllByEntity(String name) {
         Map<String, Object> hashMap = new HashMap<>();
@@ -73,16 +68,6 @@ public class TeacherController {
         teacher.setId(11);
         EntityWrapper entityWrapper = new EntityWrapper(teacher);
         teacherMapper.delete(entityWrapper);
-    }
-
-    @GetMapping(value = "/update")
-    public void update() {
-        //update的判断条件
-        EntityWrapper entityWrapper = new EntityWrapper(new Teacher(1));
-        //更新之后的对象
-        Teacher teacher = new Teacher();
-        teacher.setTeacherPwd("new-pwd");
-        teacherMapper.update(teacher, entityWrapper);
     }
 
     /**
@@ -162,4 +147,4 @@ public class TeacherController {
         System.out.println(createRandomStr(2));
     }
     }
-}
+
