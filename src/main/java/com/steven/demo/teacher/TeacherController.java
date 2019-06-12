@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 
+// 详细 https://blog.csdn.net/Danny_idea/article/details/90530392
+
 @RestController
 @RequestMapping(value = "/teacher")
 public class TeacherController {
