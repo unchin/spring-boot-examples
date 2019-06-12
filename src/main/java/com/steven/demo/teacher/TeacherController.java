@@ -28,6 +28,7 @@ public class TeacherController {
         return teacherMapper.selectByMap(hashMap);
     }
 
+    //统计查询
     @GetMapping(value = "/selectCountByEntity")
     public int selectCount(String name) {
         Teacher teacher = new Teacher();
