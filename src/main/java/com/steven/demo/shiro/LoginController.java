@@ -1,5 +1,6 @@
 package com.steven.demo.shiro;
 
+import io.swagger.annotations.ApiOperation;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class LoginController {
+
+    @ApiOperation(value = "登录")
     @PostMapping("/doLogin")
     public void doLogin(String username, String password) {
         Subject subject = SecurityUtils.getSubject();
@@ -21,12 +24,16 @@ public class LoginController {
             System.out.println("登录失败!");
         }
     }
+
+    @ApiOperation(value = "你好")
     @GetMapping("/hello")
     public String hello() {
         return "hello";
     }
+
+    @ApiOperation(value = "请登录")
     @GetMapping("/login")
-    public String  login() {
+    public String login() {
         return "please login!";
     }
 }
