@@ -12,3 +12,14 @@ spring:
     username: root
     password: 123456
 
+---
+shiro:
+  unauthorizedUrl: /unauthorizedurl
+  web:
+    enabled: true
+  loginUrl: /login
+  successUrl: /index
+  sessionManager:
+    sessionIdCookieEnabled: true
+    sessionIdUrlRewritingEnabled: true
+
