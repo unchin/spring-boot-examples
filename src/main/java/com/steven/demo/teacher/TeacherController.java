@@ -89,6 +89,13 @@ public class TeacherController {
         return sb.toString();
     }
 
+    /**
+     * allEq查询（相当于条件全部都要求满足的情况）
+     *
+     * SELECT id,teacher_name AS teacherName,teacher_pwd AS teacherPwd
+     *  FROM teacher
+     *  WHERE (teacher_pwd = 'pwd' AND teacher_name = 'name');
+     **/
     @GetMapping(value = "/selectAllByWrapper1")
     public List<Teacher> selectAllByWrapper1() {
         Map<String, Object> map = new HashMap<>();
@@ -100,6 +107,13 @@ public class TeacherController {
     }
 
 
+    /**
+     * eq查询
+     *
+     * SELECT id,teacher_name AS teacherName,teacher_pwd AS teacherPwd
+     *  FROM teacher
+     *  WHERE (teacher_name = 'name');
+     **/
     @GetMapping(value = "/selectAllByWrapper2")
     public List<Teacher> selectAllByWrapper2() {
         EntityWrapper entity = new EntityWrapper();
@@ -108,6 +122,13 @@ public class TeacherController {
     }
 
 
+    /**
+     * ne查询
+     *
+     * SELECT id,teacher_name AS teacherName,teacher_pwd AS teacherPwd
+     *  FROM teacher
+     *  WHERE (teacher_name <> 'name');
+     **/
     @GetMapping(value = "/selectAllByWrapper3")
     public List<Teacher> selectAllByWrapper3() {
         EntityWrapper entity = new EntityWrapper();
@@ -115,6 +136,26 @@ public class TeacherController {
         return teacherMapper.selectList(entity);
     }
 
+    /**
+     * 复杂的多条件查询：
+     *
+     * SELECT
+     * 	id,
+     * 	teacher_name AS teacherName,
+     * 	teacher_pwd AS teacherPwd
+     * FROM
+     * 	teacher
+     * WHERE
+     * 	(
+     * 		id > '0'
+     * 		AND id <= 11
+     * 		AND teacher_name <> 'null_name'
+     * 		AND teacher_name LIKE '%tt%'
+     * 		AND teacher_pwd NOT LIKE '%sadas%'
+     * 	)
+     * ORDER BY
+     * 	id;
+     **/
     @GetMapping(value = "/selectAllByWrapper4")
     public List<Teacher> selectAllByWrapper4() {
         EntityWrapper entity = new EntityWrapper();
@@ -127,6 +168,13 @@ public class TeacherController {
         return teacherMapper.selectList(entity);
     }
 
+    /**
+     * 组合的and和or条件查询：
+     *
+     *  SELECT id,teacher_name AS teacherName,teacher_pwd AS teacherPwd
+     *  FROM teacher
+     *  WHERE (id>1) OR (id=0 AND teacher_name='name' AND teacher_pwd IS NULL);
+     **/
     @GetMapping(value = "/selectAllByWrapper5")
     public List<Teacher> selectAllByWrapper5() {
         EntityWrapper entity = new EntityWrapper();
@@ -137,6 +185,12 @@ public class TeacherController {
     }
 
 
+    /**
+     * having和groupby查询：
+     *
+     * SELECT id,teacher_name AS teacherName,teacher_pwd AS teacherPwd
+     *  FROM teacher GROUP BY teacher_name HAVING (id>1);
+     **/
     @GetMapping(value = "/selectAllByWrapper6")
     public List<Teacher> selectAllByWrapper6() {
         EntityWrapper entity = new EntityWrapper();
