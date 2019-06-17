@@ -16,7 +16,7 @@ spring:
 shiro:
   unauthorizedUrl: /unauthorizedurl       # 访问未获授权的页面时，默认的跳转路径
   web:
-    enabled: true                         # 开启 shiro
+    enabled: false                         # 开启 shiro
   loginUrl: /login                        # 登录页面
   successUrl: /index                      # 登录成功的跳转页面
   sessionManager:
