@@ -46,7 +46,7 @@ public class ShiroConfig {
      **/
 
     //Java 原生配置
-    /*@Bean
+/*    @Bean
     ShiroFilterFactoryBean shiroFilterFactoryBean() {
         ShiroFilterFactoryBean bean = new ShiroFilterFactoryBean();
         bean.setSecurityManager(securityManager());
