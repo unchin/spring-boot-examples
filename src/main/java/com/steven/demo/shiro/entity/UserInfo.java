@@ -1,8 +1,10 @@
 package com.steven.demo.shiro.entity;
 
+import java.beans.Transient;
 import java.io.Serializable;
 import lombok.Data;
 import java.util.Date;
+import java.util.List;
 
 /**
  *  用户信息表
@@ -41,6 +43,11 @@ public class UserInfo implements Serializable {
      * 用户状态，0:创建未认证（比如没有激活，没有输入验证码等等）--等待验证的用户 ， 1:正常状态，2：用户被锁定.
      */
     private String state;
+
+    /**
+     * 一个用户具有多个角色
+     */
+    private List<SysRole> roleList;
 
     /**
      * 创建时间

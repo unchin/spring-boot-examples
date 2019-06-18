@@ -3,6 +3,7 @@ package com.steven.demo.shiro.entity;
 import java.io.Serializable;
 import lombok.Data;
 import java.util.Date;
+import java.util.List;
 
 /**
  *  角色表
@@ -16,6 +17,11 @@ public class SysRole implements Serializable {
      * 编号
      */
     private Integer id;
+
+    /**
+     * 角色标识程序中判断使用,如"admin",这个是唯一的:
+     */
+    private String role;
 
     /**
      * 角色描述，ui界面显示使用
@@ -51,6 +57,16 @@ public class SysRole implements Serializable {
      * 备注
      */
     private String remark;
+
+    /**
+     * 角色 -- 权限关系：多对多关系;
+     */
+    private List<SysPermission> permissions;
+
+    /**
+     * 用户 - 角色关系定义;
+     */
+    private List<UserInfo> userInfos;// 一个角色对应多个用户
 
     public SysRole() {
     }
