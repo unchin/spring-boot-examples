@@ -1,9 +1,9 @@
 package com.steven.shiro.config;
 
-import com.steven.demo.shiro.entity.SysPermission;
-import com.steven.demo.shiro.entity.SysRole;
-import com.steven.demo.shiro.entity.UserInfo;
-import com.steven.demo.shiro.mapper.UserInfoMapper;
+import com.steven.shiro.entity.SysPermission;
+import com.steven.shiro.entity.SysRole;
+import com.steven.shiro.entity.UserInfo;
+import com.steven.shiro.mapper.UserInfoMapper;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
@@ -30,7 +30,7 @@ public class MyRealm extends AuthorizingRealm {
         for(SysRole role:userInfo.getRoleList()){
             authorizationInfo.addRole(role.getRole());
             for(SysPermission p:role.getPermissions()){
-                authorizationInfo.addStringPermission(p.getName());
+                authorizationInfo.addStringPermission(p.getPermission());
             }
         }
         return authorizationInfo;
@@ -39,31 +39,22 @@ public class MyRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
-/*        String username = authenticationToken.getPrincipal().toString();
-        if (!"steven".equals(username)) {
-            throw new AuthenticationException("acount is not exist");
-        }
-        return new SimpleAuthenticationInfo(username, "123", getName());*/
-
-
-        System.out.println("MyShiroRealm.doGetAuthenticationInfo()");
-
         //获取用户的输入的账号.
         String username = (String)authenticationToken.getPrincipal();
-        System.out.println(authenticationToken.getCredentials());
+
         //通过username从数据库中查找 User对象，如果找到，没找到.
         //实际项目中，这里可以根据实际情况做缓存，如果不做，Shiro自己也是有时间间隔机制，2分钟内不会重复执行该方法
         UserInfo userInfo = new UserInfo();
         userInfo.setUsername(username);
         UserInfo newUserInfo = userInfoMapper.selectOne(userInfo);
-        System.out.println("----->>userInfo="+newUserInfo);
-        if(userInfo == null){
+
+        if(newUserInfo == null){
             return null;
         }
         SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(
-                userInfo, //用户名
-                userInfo.getPassword(), //密码
-                ByteSource.Util.bytes(userInfo.getSalt()),//salt=username+salt
+                newUserInfo, //用户名
+                newUserInfo.getPassword(), //密码
+                ByteSource.Util.bytes(newUserInfo.getSalt()),//salt=username+salt
                 getName()  //realm name
         );
         return authenticationInfo;
