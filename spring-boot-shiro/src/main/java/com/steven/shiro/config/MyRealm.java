@@ -1,8 +1,13 @@
 package com.steven.shiro.config;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.steven.shiro.entity.SysPermission;
 import com.steven.shiro.entity.SysRole;
+import com.steven.shiro.entity.SysUserRole;
 import com.steven.shiro.entity.UserInfo;
+import com.steven.shiro.mapper.SysPermissionMapper;
+import com.steven.shiro.mapper.SysRoleMapper;
+import com.steven.shiro.mapper.SysUserRoleMapper;
 import com.steven.shiro.mapper.UserInfoMapper;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -16,20 +21,33 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 public class MyRealm extends AuthorizingRealm {
 
     @Resource
     private UserInfoMapper userInfoMapper;
 
+    @Resource
+    private SysRoleMapper sysRoleMapper;
+
+    @Resource
+    private SysPermissionMapper sysPermissionMapper;
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
         System.out.println("权限配置-->MyShiroRealm.doGetAuthorizationInfo()");
         SimpleAuthorizationInfo authorizationInfo = new SimpleAuthorizationInfo();
         UserInfo userInfo  = (UserInfo)principals.getPrimaryPrincipal();
-        for(SysRole role:userInfo.getRoleList()){
+
+        //获取用户所拥有的角色
+        List<SysRole> sysUserRoles = sysRoleMapper.selectListByUid(userInfo.getUid());
+        for(SysRole role:sysUserRoles){
             authorizationInfo.addRole(role.getRole());
-            for(SysPermission p:role.getPermissions()){
+
+            //获取角色所拥有的权限
+            List<SysPermission> sysPermissions = sysPermissionMapper.selectListByRoleId(role.getId());
+            for(SysPermission p:sysPermissions){
                 authorizationInfo.addStringPermission(p.getPermission());
             }
         }

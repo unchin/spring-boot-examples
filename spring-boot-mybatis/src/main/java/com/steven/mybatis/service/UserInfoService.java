@@ -1,9 +1,7 @@
-package com.steven.shiro.service;
+package com.steven.mybatis.service;
 
 
-import com.steven.shiro.entity.UserInfo;
-
-import java.util.List;
+import com.steven.mybatis.entity.UserInfo;
 
 /**
  * 用户信息表

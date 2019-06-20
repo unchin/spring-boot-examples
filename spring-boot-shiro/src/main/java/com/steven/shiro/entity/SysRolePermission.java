@@ -1,17 +1,15 @@
 package com.steven.shiro.entity;
 
-import lombok.Data;
-
 import java.io.Serializable;
+import lombok.Data;
 import java.util.Date;
-import java.util.List;
 
 /**
- *  角色表
- * @author StevenGuo 2019-06-18
+ *  角色权限表
+ * @author StevenGuo 2019-06-19
  */
 @Data
-public class SysRole implements Serializable {
+public class SysRolePermission implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -20,19 +18,14 @@ public class SysRole implements Serializable {
     private Integer id;
 
     /**
-     * 角色标识程序中判断使用,如"admin",这个是唯一的:
+     * 角色权限
      */
-    private String role;
+    private Integer permissionId;
 
     /**
-     * 角色描述，ui界面显示使用
+     * 角色编号
      */
-    private String description;
-
-    /**
-     * 是否可用，如果不可用将不会添加给用户
-     */
-    private String available;
+    private Integer roleId;
 
     /**
      * 创建时间
@@ -59,8 +52,7 @@ public class SysRole implements Serializable {
      */
     private String remark;
 
-
-    public SysRole() {
+    public SysRolePermission() {
     }
 
 }

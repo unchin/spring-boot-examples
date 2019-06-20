@@ -1,6 +1,5 @@
-package com.steven.shiro.entity;
+package com.steven.mybatis.entity;
 
-import com.baomidou.mybatisplus.annotations.TableName;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -11,7 +10,6 @@ import java.util.Date;
  * @author StevenGuo 2019-06-18
  */
 @Data
-@TableName("user_info")
 public class UserInfo implements Serializable {
     private static final long serialVersionUID = 1L;
 

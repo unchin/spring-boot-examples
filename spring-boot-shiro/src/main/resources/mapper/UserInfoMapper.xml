@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.steven.demo.shiro.dao.UserInfoDao">
+<mapper namespace="com.steven.shiro.mapper.UserInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.steven.shiro.entity.UserInfo" >
         <result column="uid" property="uid" />
@@ -30,5 +30,10 @@
                 `operator`,
                 `remark`
     </sql>
+
+    <select id="userInfo" resultType="com.steven.shiro.entity.UserInfo">
+        select * from user_info
+        where username = #{username}
+    </select>
 
 </mapper>

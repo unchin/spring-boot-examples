@@ -1,8 +1,8 @@
-package com.steven.shiro.service.impl;
+package com.steven.mybatis.service.impl;
 
-import com.steven.shiro.entity.UserInfo;
-import com.steven.shiro.mapper.UserInfoMapper;
-import com.steven.shiro.service.UserInfoService;
+import com.steven.mybatis.entity.UserInfo;
+import com.steven.mybatis.mapper.UserInfoMapper;
+import com.steven.mybatis.service.UserInfoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

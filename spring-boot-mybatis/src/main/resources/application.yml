@@ -1,0 +1,15 @@
+server:
+  port: 8080
+mybatis:
+  mapperLocations: classpath*:/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+spring:
+  application:
+    name: spring-boot-mybatis
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
+    username: root
+    password: 123456
+
+
