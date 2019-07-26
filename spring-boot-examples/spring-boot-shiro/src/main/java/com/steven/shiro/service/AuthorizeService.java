@@ -1,6 +1,6 @@
 package com.steven.shiro.service;
 
-interface AuthorizeService {
+public interface AuthorizeService {
 
     /**
      * 根据客户端id 查询客户端是否存在
