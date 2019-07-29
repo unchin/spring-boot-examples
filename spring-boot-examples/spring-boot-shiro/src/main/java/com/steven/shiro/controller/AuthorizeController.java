@@ -34,13 +34,14 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
- * @description: 授权控制器
+ *  授权控制器
  *
  * 代码的作用:
  * 1、首先通过如 http://localhost:9090/oauth-server/authorize?response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A9080%2Foauth-client%2FcallbackCode&client_id=c1ebe466-1cdc-4bd3-ab69-77c3561b9dee
  * 2、该控制器首先检查clientId是否正确；如果错误将返回相应的错误信息
  * 3、然后判断用户是否登录了，如果没有登录首先到登录页面登录
- * 4、登录成功后生成相应的auth code即授权码，然后重定向到客户端地址，如http://localhost:9080/oauth-client/oauth2-login?code=52b1832f5dff68122f4f00ae995da0ed；在重定向到的地址中会带上code参数（授权码），接着客户端可以根据授权码去换取access token。
+ * 4、登录成功后生成相应的auth code即授权码，然后重定向到客户端地址，如 http://localhost:9080/oauth-client/oauth2-login?code=52b1832f5dff68122f4f00ae995da0ed
+ * 5、在重定向到的地址中会带上code参数（授权码），接着客户端可以根据授权码去换取access token。
  */
 @RestController
 @RequestMapping("/oauth-server")
@@ -79,7 +80,7 @@ public class AuthorizeController {
                 if (!login(subject, request)) {
                     //登录失败时跳转到登陆页面
                     model.addAttribute("client", clientService.findByClientId(oauthRequest.getClientId()));
-                    return "oauth2login";
+                    return "login";
                 }
             }
             String username = (String) subject.getPrincipal();

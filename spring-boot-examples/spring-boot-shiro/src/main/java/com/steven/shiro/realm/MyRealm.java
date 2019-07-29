@@ -1,13 +1,10 @@
-package com.steven.shiro.config;
+package com.steven.shiro.realm;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.steven.shiro.entity.SysPermission;
 import com.steven.shiro.entity.SysRole;
-import com.steven.shiro.entity.SysUserRole;
 import com.steven.shiro.entity.UserInfo;
 import com.steven.shiro.mapper.SysPermissionMapper;
 import com.steven.shiro.mapper.SysRoleMapper;
-import com.steven.shiro.mapper.SysUserRoleMapper;
 import com.steven.shiro.mapper.UserInfoMapper;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
