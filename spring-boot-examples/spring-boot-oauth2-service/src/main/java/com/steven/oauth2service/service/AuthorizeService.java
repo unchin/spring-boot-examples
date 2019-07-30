@@ -1,4 +1,4 @@
-package com.steven.shiro.service;
+package com.steven.oauth2service.service;
 
 public interface AuthorizeService {
 

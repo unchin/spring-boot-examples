@@ -1,4 +1,4 @@
-package com.steven.shiro.service.impl;
+package com.steven.oauth2service.service.impl;
 
 import com.steven.shiro.entity.Client;
 import com.steven.shiro.mapper.ClientMapper;

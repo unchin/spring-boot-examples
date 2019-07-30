@@ -1,4 +1,4 @@
-package com.steven.shiro;
+package com.steven.oauth2service;
 
 /**
  * <p>User: Zhang Kaitao

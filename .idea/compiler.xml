@@ -6,19 +6,25 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-redis" />
         <module name="shiro" />
+        <module name="spring-boot-oauth2-client" />
+        <module name="spring-boot-oauth2-service" />
+        <module name="spring-boot-redis" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="shiro" target="1.8" />
       <module name="spring-boot-examples" target="1.8" />
+      <module name="spring-boot-oauth2-client" target="1.8" />
+      <module name="spring-boot-oauth2-service" target="1.8" />
       <module name="spring-boot-redis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="shiro" options="-parameters" />
+      <module name="spring-boot-oauth2-client" options="-parameters" />
+      <module name="spring-boot-oauth2-service" options="-parameters" />
       <module name="spring-boot-redis" options="-parameters" />
     </option>
   </component>

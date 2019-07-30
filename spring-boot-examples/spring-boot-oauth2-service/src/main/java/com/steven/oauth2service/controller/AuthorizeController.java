@@ -1,4 +1,4 @@
-package com.steven.shiro.controller;
+package com.steven.oauth2service.controller;
 
 import com.steven.shiro.service.AuthorizeService;
 import com.steven.shiro.service.ClientService;

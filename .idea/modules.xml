@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/spring-boot-examples/spring-boot-shiro/shiro.iml" filepath="$PROJECT_DIR$/spring-boot-examples/spring-boot-shiro/shiro.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-examples/spring-boot-examples.iml" filepath="$PROJECT_DIR$/spring-boot-examples/spring-boot-examples.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-examples/spring-boot-oauth2-client/spring-boot-oauth2-client.iml" filepath="$PROJECT_DIR$/spring-boot-examples/spring-boot-oauth2-client/spring-boot-oauth2-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-examples/spring-boot-oauth2-service/spring-boot-oauth2-service.iml" filepath="$PROJECT_DIR$/spring-boot-examples/spring-boot-oauth2-service/spring-boot-oauth2-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-examples/spring-boot-redis/spring-boot-redis.iml" filepath="$PROJECT_DIR$/spring-boot-examples/spring-boot-redis/spring-boot-redis.iml" />
     </modules>
   </component>

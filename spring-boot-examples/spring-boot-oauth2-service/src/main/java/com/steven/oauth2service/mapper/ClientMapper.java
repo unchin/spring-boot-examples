@@ -1,4 +1,4 @@
-package com.steven.shiro.mapper;
+package com.steven.oauth2service.mapper;
 
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import com.steven.shiro.entity.Client;
