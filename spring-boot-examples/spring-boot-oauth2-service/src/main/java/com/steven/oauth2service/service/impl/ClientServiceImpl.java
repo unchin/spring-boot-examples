@@ -16,9 +16,10 @@ public class ClientServiceImpl implements ClientService {
 
     /**
      * 根据clientId查询Client信息
+     * @return
      */
     @Override
-    public Client findByClientId(String clientId) {
+    public Object findByClientId(String clientId) {
         Client client = new Client();
         client.setClientId(clientId);
         return clientMapper.selectOne(client);

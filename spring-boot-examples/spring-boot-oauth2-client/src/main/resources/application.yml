@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+mybatis:
+  mapperLocations: classpath*:/mapper/*.xml
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+spring:
+  application:
+    name: spring-boot-mybatis
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode:true&characterEncoding:UTF-8&serverTimezone:GMT
+    username: root
+    password: 123456
+
+logging:
+  level:
+    com:
+      steven:
+        shiro: DEBUG
+
+accessTokenUrl: https://github.com/login/oauth/access_token
+#authorizeUrl: https://github.com/login/oauth/authorize
+authorizeUrl: https://open.weixin.qq.com/connect/qrconnect
+#clientId: d84ae2ad854432d38588
+clientId: wxf356bbd3ab4d7890
+#clientSecret: 890f199207c72b78bce85925aa19e614685ccdd7
+clientSecret: c16a5305893da804621105ef05e9fae6
+redirectUrl: http://localhost:8080/oauth-client/callbackCode
+response_type: code
+userInfoUrl: /oauth-client/getUserInfo

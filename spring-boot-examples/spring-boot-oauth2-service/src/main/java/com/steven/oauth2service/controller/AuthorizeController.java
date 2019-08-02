@@ -1,7 +1,7 @@
 package com.steven.oauth2service.controller;
 
-import com.steven.shiro.service.AuthorizeService;
-import com.steven.shiro.service.ClientService;
+import com.steven.oauth2service.service.AuthorizeService;
+import com.steven.oauth2service.service.ClientService;
 import org.apache.oltu.oauth2.as.issuer.MD5Generator;
 import org.apache.oltu.oauth2.as.issuer.OAuthIssuerImpl;
 import org.apache.oltu.oauth2.as.request.OAuthAuthzRequest;

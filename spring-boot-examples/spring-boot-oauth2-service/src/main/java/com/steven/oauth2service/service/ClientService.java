@@ -5,8 +5,9 @@ import com.steven.shiro.entity.Client;
 public interface ClientService {
     /**
      * 根据clientId查询Client信息
+     * @return
      */
-     Client findByClientId(String clientId);
+     Object findByClientId(String clientId);
 
     /**
      * 根据clientSecret查询client信息
