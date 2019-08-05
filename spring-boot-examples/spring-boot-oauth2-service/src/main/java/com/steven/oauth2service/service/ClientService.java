@@ -1,6 +1,7 @@
 package com.steven.oauth2service.service;
 
-import com.steven.shiro.entity.Client;
+
+import com.steven.oauth2service.entity.Client;
 
 public interface ClientService {
     /**

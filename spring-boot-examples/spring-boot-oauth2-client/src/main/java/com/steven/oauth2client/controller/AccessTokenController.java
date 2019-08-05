@@ -4,7 +4,6 @@ import org.apache.oltu.oauth2.client.OAuthClient;
 import org.apache.oltu.oauth2.client.URLConnectionClient;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
 import org.apache.oltu.oauth2.client.response.OAuthAccessTokenResponse;
-import org.apache.oltu.oauth2.client.response.OAuthJSONAccessTokenResponse;
 import org.apache.oltu.oauth2.common.OAuth;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
@@ -14,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
-import java.util.Map;
-
 
 /**
  * 1、服务端回调,传回code值
@@ -26,7 +22,7 @@ import java.util.Map;
  * @date 10:16 2019/7/31
  **/
 @RestController
-@RequestMapping("/oauth-client")
+//@RequestMapping("/oauth-client")
 public class AccessTokenController {
     @Value("${clientId}")
     private String clientId;
@@ -45,7 +41,8 @@ public class AccessTokenController {
 
 
     //接受客户端返回的code，提交申请access token的请求
-    @RequestMapping("/callbackCode")
+//    @RequestMapping("/callbackCode")
+    @RequestMapping("/getResourcesFromWeibo")
     public Object toLogin(HttpServletRequest request) throws OAuthProblemException, OAuthSystemException {
 
         String code = request.getParameter("code");

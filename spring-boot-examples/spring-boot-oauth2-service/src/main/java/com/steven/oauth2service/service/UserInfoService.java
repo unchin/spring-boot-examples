@@ -1,7 +1,7 @@
 package com.steven.oauth2service.service;
 
 
-import com.steven.shiro.entity.UserInfo;
+import com.steven.oauth2service.entity.UserInfo;
 
 /**
  * 用户信息表

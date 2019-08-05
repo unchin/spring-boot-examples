@@ -20,13 +20,17 @@ logging:
       steven:
         shiro: DEBUG
 
-accessTokenUrl: https://github.com/login/oauth/access_token
-#authorizeUrl: https://github.com/login/oauth/authorize
-authorizeUrl: https://open.weixin.qq.com/connect/qrconnect
-#clientId: d84ae2ad854432d38588
-clientId: wxf356bbd3ab4d7890
-#clientSecret: 890f199207c72b78bce85925aa19e614685ccdd7
-clientSecret: c16a5305893da804621105ef05e9fae6
-redirectUrl: http://localhost:8080/oauth-client/callbackCode
+#获取token的链接
+accessTokenUrl: https://api.weibo.com/oauth2/access_token
+#获取code的链接
+authorizeUrl: https://api.weibo.com/oauth2/authorize
+#登记完后第三方服务返回给我们的客户端编号（每个应用注册的都不同）
+clientId: 2002214738
+#登记完后第三方服务返回给我们的客户端密钥
+clientSecret: 1c183be503847bf86ce3c033ce7ab05d
+#回调接口地址
+redirectUrl: http://127.0.0.1:8080/getResourcesFromWeibo
+#授权方式
 response_type: code
+#本地应用需要访问的接口
 userInfoUrl: /oauth-client/getUserInfo

@@ -1,7 +1,7 @@
 package com.steven.oauth2service.service.impl;
 
-import com.steven.shiro.service.AuthorizeService;
-import com.steven.shiro.service.ClientService;
+import com.steven.oauth2service.service.AuthorizeService;
+import com.steven.oauth2service.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
