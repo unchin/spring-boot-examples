@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 9090
 
 mybatis:
   mapperLocations: classpath*:/mapper/*.xml
@@ -8,9 +8,9 @@ mybatis:
 
 spring:
   application:
-    name: spring-boot-mybatis
+    name: spring-boot-oauth2-client
   datasource:
-    url: jdbc:mysql://localhost:3306/test?useUnicode:true&characterEncoding:UTF-8&serverTimezone:GMT
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: root
     password: 123456
 
@@ -20,17 +20,10 @@ logging:
       steven:
         shiro: DEBUG
 
-#获取token的链接
-accessTokenUrl: https://api.weibo.com/oauth2/access_token
-#获取code的链接
 authorizeUrl: https://api.weibo.com/oauth2/authorize
-#登记完后第三方服务返回给我们的客户端编号（每个应用注册的都不同）
+accessTokenUrl: https://api.weibo.com/oauth2/access_token
 clientId: 2002214738
-#登记完后第三方服务返回给我们的客户端密钥
 clientSecret: 1c183be503847bf86ce3c033ce7ab05d
-#回调接口地址
 redirectUrl: http://127.0.0.1:8080/getResourcesFromWeibo
-#授权方式
 response_type: code
-#本地应用需要访问的接口
 userInfoUrl: /oauth-client/getUserInfo
