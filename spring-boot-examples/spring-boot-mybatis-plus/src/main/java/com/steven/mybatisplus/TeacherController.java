@@ -89,7 +89,6 @@ public class TeacherController {
         return sb.toString();
     }
 
-
     /**
      * allEq查询（相当于条件全部都要求满足的情况）
      *
