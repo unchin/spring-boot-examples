@@ -106,7 +106,6 @@ public class TeacherController {
         return teacherMapper.selectList(entity);
     }
 
-
     /**
      * eq查询
      *
