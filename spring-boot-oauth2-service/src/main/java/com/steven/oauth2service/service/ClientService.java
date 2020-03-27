@@ -8,7 +8,7 @@ public interface ClientService {
      * 根据clientId查询Client信息
      * @return
      */
-     Object findByClientId(String clientId);
+     Client findByClientId(String clientId);
 
     /**
      * 根据clientSecret查询client信息

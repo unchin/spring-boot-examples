@@ -1,8 +1,8 @@
 package com.steven.oauth2service.service.impl;
 
-import com.steven.shiro.entity.Client;
-import com.steven.shiro.mapper.ClientMapper;
-import com.steven.shiro.service.ClientService;
+import com.steven.oauth2service.entity.Client;
+import com.steven.oauth2service.mapper.ClientMapper;
+import com.steven.oauth2service.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,7 +19,7 @@ public class ClientServiceImpl implements ClientService {
      * @return
      */
     @Override
-    public Object findByClientId(String clientId) {
+    public Client findByClientId(String clientId) {
         Client client = new Client();
         client.setClientId(clientId);
         return clientMapper.selectOne(client);
