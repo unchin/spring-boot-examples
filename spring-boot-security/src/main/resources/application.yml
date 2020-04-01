@@ -1,5 +1,5 @@
 server:
-  port: 9090
+  port: 9099
 
 mybatis:
   mapperLocations: classpath*:/mapper/*.xml
@@ -8,7 +8,7 @@ mybatis:
 
 spring:
   application:
-    name: spring-boot-shiro
+    name: spring-boot-security
   datasource:
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT
     username: root
