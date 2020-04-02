@@ -19,6 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+        //todo 集成数据库查询
         auth.inMemoryAuthentication()
                 .withUser("unchin")
                 .password(passwordEncoder().encode("123"))
