@@ -1,0 +1,9 @@
+
+server:
+  port: 8082
+
+logging:
+  level:
+    com:
+      steven:
+        shiro: DEBUG

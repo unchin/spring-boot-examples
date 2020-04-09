@@ -1,0 +1,46 @@
+after_script:
+  - docker rmi $( docker images -q -f dangling=true)
+
+stages:
+  - build
+  - test
+  - deploy
+
+job_build:
+  stage: build
+  script:
+    - mvn clean install
+
+job_test:
+  stage: test
+  script:
+    - mvn test
+
+
+job_deploy_dev:
+  stage: deploy
+  script:
+    - mvn package docker:build -P dev
+    - if [ $(docker ps -aq --filter name=spring-boot-docker-multi-environment) ]; then docker rm -f spring-boot-docker-multi-environment-dev;fi
+    - docker run -e profiles="dev" -it --name spring-boot-docker-multi-environment-dev -d -p 8081:8081 unchin/spring-boot-docker-multi-environment
+  only:
+    - dev
+
+job_deploy_uat:
+  stage: deploy
+  script:
+    - mvn package docker:build -P uat
+    - if [ $(docker ps -aq --filter name=sspring-boot-docker-multi-environment-uat) ]; then docker rm -f spring-boot-docker-multi-environment-uat;fi
+    - docker run -e profiles="uat" -it --name spring-boot-docker-multi-environment-uat -d -p 8082:8082 unchin/spring-boot-docker-multi-environment
+  only:
+    - uat
+
+job_deploy_pro:
+  stage: deploy
+  script:
+    - mvn package docker:build -P pro
+    - if [ $(docker ps -aq --filter name=spring-boot-docker-multi-environment-pro) ]; then docker rm -f spring-boot-docker-multi-environment-pro;fi
+    - docker run -e profiles="pro" -it --name spring-boot-docker-multi-environment-pro -d -p 8090:8090 unchin/spring-boot-docker-multi-environment
+  only:
+    - tags
+
