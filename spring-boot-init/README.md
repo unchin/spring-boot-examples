@@ -16,20 +16,6 @@
 - [java8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 - [maven](http://maven.apache.org/) 
 
-### 开发环境搭建
-linux、mac、windows系统不同，各自搭建好开发环境
 
 
-## 更新日志
 
-**2020-08-05：** 
-
-1.新增hutool工具类
-
-2.新增swagger文档生成工具
-
-**2020-08-04：** 
-
-1.初始化项目
-
-2.完成项目的git准备
