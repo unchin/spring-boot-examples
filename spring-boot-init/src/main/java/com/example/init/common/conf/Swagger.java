@@ -1,6 +1,5 @@
-package com.fc.test.common.conf;
+package com.example.init.common.conf;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -31,7 +30,7 @@ public class Swagger {
 				// 设置哪些接口暴露给Swagger展示
 				.select()
 				 // 扫描所有有注解的api，用这种方式更灵活
-				.apis(RequestHandlerSelectors.basePackage("com.fc.test"))
+				.apis(RequestHandlerSelectors.basePackage("com.example.init"))
 				// 扫描指定包中的swagger注解
 				//.apis(RequestHandlerSelectors.basePackage("com.fc.test.controller"))
 				// 扫描所有 .apis(RequestHandlerSelectors.any())
@@ -42,13 +41,13 @@ public class Swagger {
 	private ApiInfo apiInfo() {
 		return new ApiInfoBuilder()
 				//设置标题
-				.title("springboot_v2 API文档")
+				.title("API文档")
 				//描述
-				.description("SpringBoot_v2项目是努力打造springboot框架的极致细腻的脚手架")
+				.description("努力打造springboot框架的极致细腻的脚手架")
 				 //作者信息
                 //.contact(new Contact(v2Config.getName(), null, V2Config.getEmail_account()))
                 //服务条款URL
-				.termsOfServiceUrl("https://gitee.com/bdj/SpringBoot_v2/wikis/")
+				.termsOfServiceUrl("")
 				//版本
 				.version("版本号:0.0.1")
 				.build();
