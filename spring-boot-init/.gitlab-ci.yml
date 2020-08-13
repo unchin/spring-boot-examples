@@ -1,0 +1,29 @@
+after_script:
+  - docker rmi $( docker images -q -f dangling=true)
+
+stages:
+  - build
+  - test
+  - deploy
+
+job_build:
+  stage: build
+  script:
+    - mvn clean install
+
+job_test:
+  stage: test
+  script:
+    - mvn test
+
+
+job_deploy:
+  stage: deploy
+  script:
+    - mvn package docker:build
+    - if [ $(docker ps -aq --filter name=init) ]; then docker rm -f init;fi
+    - docker run -e profiles="dev" -it --name init -v /usr/local/src/:/usr/local/src/ --privileged=true -d -p 3456:3456 steven/init
+  only:
+    - master
+
+

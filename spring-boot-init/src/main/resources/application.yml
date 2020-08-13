@@ -27,3 +27,18 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
     time-zone: GMT+8
     property-naming-strategy: LOWER_CAMEL_CASE
+
+
+# 系统附件存储的路径前缀
+file:
+  address:
+    #linux
+#    prefix: /usr/local/src/
+    #windows
+    prefix: F:/upload
+    fileUploadRootDir: /init/
+    host: http://10.10.10.157:1234
+
+logging:
+  level:
+    org.gdjz.*: info
