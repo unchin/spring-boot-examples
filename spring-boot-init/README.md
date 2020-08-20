@@ -18,6 +18,7 @@
 
 组织架构
 
+```
 Springboot
 ├─docs  项目SQL语句以及文档
 │
@@ -63,11 +64,22 @@ Springboot
 │  │
 │  ├─application-dev.yml 开发环境配置
 │  ├─application-prod.yml 生产环境配置
-│  ├─banner1.txt springboot 启动动画
+│  ├─banner.txt springboot 启动动画
 │  
 └─pom.xml   maven.xml
+```
 
+### 技术选项
 
-
+技术|名称|官网|备注
+---|---|---|---
+springboot|springboot框架 ||
+Apache Shiro|权限框架||
+PageHelper|MyBatis物理分页插件||
+Log4J|日志组件||
+Swagger2|接口测试框架||
+Maven|项目构建管理||
+druid|阿里连接池||
+quartz|定时框架||
 
 
